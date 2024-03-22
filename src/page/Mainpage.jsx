@@ -83,7 +83,7 @@ const Mainpage = () => {
           </div>
         </div>
         <div className="mt-20">
-          <p className="mb-20 text-center sm:text-4xl text-xl font-bold">
+          {/* <p className="mb-20 text-center sm:text-4xl text-xl font-bold">
             Trusted by leading financial institutions
           </p>
           <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 items-start justify-between">
@@ -96,7 +96,7 @@ const Mainpage = () => {
             <div>
               <img src="./users/mbank.png" alt="mbank" />
             </div>
-          </div>
+          </div> */}
           <p className="text-4xl text-center font-bold my-20">Backed by</p>
           <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 items-start justify-between mb-20">
             <div>
