@@ -26,7 +26,7 @@ const TitleSec = () => {
             rel="noreferrer"
             className="py-2 px-5 bg-black rounded-2xl text-lg text-white hover:bg-white hover:border-2 hover:border-black hover:text-black"
           >
-            learn more{" "}
+            Learn more{" "}
           </a>
         </div>
         <div className="mt-20 flex items-center justify-between">
