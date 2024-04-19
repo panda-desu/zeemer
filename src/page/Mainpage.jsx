@@ -29,7 +29,11 @@ const Mainpage = () => {
               </p>
             </div>
             <div className="">
-              <img src="./mainpage/frame1.png" alt="frame" />
+              <img
+                className="rounded-2xl shadow-xl w-[598px]"
+                src="./mainpage/frame4.png"
+                alt="frame"
+              />
             </div>
           </div>
           <div className="my-20 flex justify-end me-0 sm:me-[300px]">
@@ -41,7 +45,11 @@ const Mainpage = () => {
           </div>
           <div className="flex sm:flex-row flex-col-reverse items-start justify-between">
             <div className="">
-              <img src="./mainpage/frame2.png" alt="frame" />
+              <img
+                className="rounded-2xl shadow-xl w-[598px]"
+                src="./mainpage/frame5.png"
+                alt="frame"
+              />
             </div>
             <div className="mt-10">
               <div className="flex items-center">
@@ -228,13 +236,13 @@ const Mainpage = () => {
                 <input
                   type="text"
                   className="border-2 rounded-lg  h-[56px] sm:w-[435px] w-[300px] bg-[#aaa] bg-opacity-10 py-2 px-5 "
-                  placeholder="David"
+                  placeholder="Patrick Collison"
                 />
                 <p className="mt-4">E-Mail</p>
                 <input
                   type="email"
                   className="border-2 rounded-lg  h-[56px] sm:w-[435px] w-[300px] bg-[#aaa] bg-opacity-10 py-2 px-5 "
-                  placeholder="david@stripe.com"
+                  placeholder="patrick@stripe.com"
                 />
                 <div className="flex flex-col sm:flex-row justify-between">
                   <div>

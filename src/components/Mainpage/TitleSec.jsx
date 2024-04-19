@@ -6,17 +6,14 @@ const TitleSec = () => {
     <div className="relative mb-[400px] sm:mb-[150px]">
       <img src="bgimg.png" alt="img" />
       <div className="absolute top-20 sm:top-[188px] sm:inset-x-[15%] inset-x-[2%] z-10">
-        <p className="text-center text-xl sm:text-4xl font-bold ">
-          Generative AI and Games helps lenders <br /> to improve their credit
-          default
+        <p className="text-center text-xl sm:text-6xl font-bold ">
+          Generative AI and Games <br /> in Credit Score
         </p>
-        <p className="text-center text-[12px] sm:text-lg mt-10 sm:mt-20">
+        <p className="text-center text-[12px] font-bold sm:text-lg mt-10 sm:mt-20">
           Our neuroscience-based games are designed to uncover insightful
-          behavioral data about borrowers, <br />
-          aiming to <span className="text-[#FF3F3F]">
-            reduce default rates
-          </span>{" "}
-          and <span className="text-[#30BD4F]">increase approval rates</span>{" "}
+          behavioral data about <br /> borrowers, aiming to{" "}
+          <span className="text-[#FF3F3F]">reduce default rates</span> and{" "}
+          <span className="text-[#30BD4F]">increase approval rates</span>{" "}
           efficiently.
         </p>
         <div className="flex justify-center mt-10 sm:mt-20">
