@@ -1,10 +1,75 @@
-// Mainpage.js
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import TitleSec from "../components/Mainpage/TitleSec";
 import { IoGameControllerOutline } from "react-icons/io5";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Mainpage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    companyName: "",
+    companySize: 0,
+    message: "",
+  });
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const isFormValid = () => {
+    let emptyFieldFound = false;
+
+    Object.entries(formData).forEach(([key, value]) => {
+      if (key !== "companySize" && value === "") {
+        emptyFieldFound = true;
+        return;
+      }
+    });
+
+    if (formData.companySize === 0) {
+      toast.error("Please enter company size.");
+      return false;
+    }
+
+    if (emptyFieldFound) {
+      toast.error("Please fill in all fields.");
+      return false;
+    }
+
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isFormValid()) {
+      return;
+    }
+    try {
+      const response = await axios.post(
+        "https://metacogserver.azurewebsites.net/v1/contacted",
+        formData
+      );
+      toast.success("Request sent successfully.");
+      console.log(response.data);
+      setFormData({
+        name: "",
+        email: "",
+        companyName: "",
+        companySize: 0,
+        message: "",
+      });
+    } catch (error) {
+      toast.error("An error occurred.");
+      console.error("Error submitting form:", error);
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -24,9 +89,9 @@ const Mainpage = () => {
                 Choose the package that <br /> suits your App or Web
               </p>
               <p className="sm:text-lg text-sm mb-4 sm:mb-0 mt-4">
-                We’ve already made it easy to integrate <br /> our games into
-                your fintech solution <br /> whether it an app or web-based
-                platform
+                Fintech companies are able to choose <br /> from different game
+                packages suitable for <br /> their business goals and target
+                market
               </p>
             </div>
             <div className="">
@@ -81,9 +146,8 @@ const Mainpage = () => {
                 Approve more loans <br /> with less default rate
               </p>
               <p className="sm:text-lg text-base mb-4 sm:mb-0 mt-4">
-                We’ve already made it easy to integrate <br /> our games into
-                your fintech solution <br /> whether it an app or web-based
-                platform
+                Fintech companies experience more user <br /> engagement thus
+                more data to analyze
               </p>
             </div>
             <div className="">
@@ -237,19 +301,28 @@ const Mainpage = () => {
               </p>
             </div>
             <div className="sm:mt-0 mt-20">
+              {console.log(formData)}
               <p className="text-4xl font-bold">Contact Us</p>
-              <form className="mt-10">
+              <form onSubmit={handleSubmit} className="mt-10">
                 <p>Your Name</p>
                 <input
                   type="text"
                   className="border-2 rounded-lg  h-[56px] sm:w-[435px] w-[300px] bg-[#aaa] bg-opacity-10 py-2 px-5 "
                   placeholder="Patrick Collison"
+                  onChange={(e) => {
+                    setFormData({ ...formData, name: e.target.value });
+                  }}
+                  value={formData.name}
                 />
                 <p className="mt-4">E-Mail</p>
                 <input
                   type="email"
                   className="border-2 rounded-lg  h-[56px] sm:w-[435px] w-[300px] bg-[#aaa] bg-opacity-10 py-2 px-5 "
                   placeholder="patrick@stripe.com"
+                  onChange={(e) => {
+                    setFormData({ ...formData, email: e.target.value });
+                  }}
+                  value={formData.email}
                 />
                 <div className="flex flex-col sm:flex-row justify-between">
                   <div>
@@ -258,6 +331,13 @@ const Mainpage = () => {
                       type="text"
                       className="border-2 rounded-lg h-[56px] sm:w-[211px] w-[300px] bg-[#aaa] bg-opacity-10 py-2 px-5 "
                       placeholder="Stripe"
+                      onChange={(e) => {
+                        setFormData({
+                          ...formData,
+                          companyName: e.target.value,
+                        });
+                      }}
+                      value={formData.companyName}
                     />
                   </div>
                   <div>
@@ -266,6 +346,13 @@ const Mainpage = () => {
                       type="number"
                       className="border-2 rounded-lg h-[56px] sm:w-[211px] w-[300px] bg-[#aaa] bg-opacity-10 py-2 px-5 "
                       placeholder="1000"
+                      onChange={(e) => {
+                        setFormData({
+                          ...formData,
+                          companySize: parseInt(e.target.value, 10),
+                        });
+                      }}
+                      value={formData.companySize}
                     />
                   </div>
                 </div>
@@ -274,17 +361,25 @@ const Mainpage = () => {
                   type="text"
                   className="border-2 rounded-lg h-[112px] sm:w-[435px] w-[300px] bg-[#aaa] bg-opacity-10 py-2 px-5 "
                   placeholder="Please type your message here"
+                  onChange={(e) => {
+                    setFormData({ ...formData, message: e.target.value });
+                  }}
+                  value={formData.message}
                 />
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    className="border-2 rounded-[30px] mt-5 bg-black text-white px-5 py-2 hover:border-black hover:bg-white hover:text-black text-2xl"
+                  >
+                    Send
+                  </button>
+                </div>
               </form>
-              <div className="flex justify-end">
-                <button className="border-2 rounded-[30px] mt-5 bg-black text-white px-5 py-2 hover:border-black hover:bg-white hover:text-black text-2xl">
-                  Send
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
