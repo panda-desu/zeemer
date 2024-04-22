@@ -107,14 +107,18 @@ const Mainpage = () => {
           </div> */}
           <p className="text-4xl text-center font-bold my-20">Backed by</p>
           <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 items-start justify-between mb-20">
-            <div>
-              <img src="./partner/silkway2.png" alt="silkway" />
+            <div className="border w-[300px] h-[175px] flex items-center justify-center rounded-xl shadow-xl">
+              <img src="./partner/silkway2.svg" alt="silkway" />
             </div>
-            <div>
-              <img src="./partner/microsoft2.png" alt="mirosoft" />
+            <div className="border w-[300px] h-[175px] flex items-center justify-center rounded-xl shadow-xl">
+              <img
+                className="mt-4"
+                src="./partner/microsoft2.svg"
+                alt="mirosoft"
+              />
             </div>
-            <div>
-              <img src="./partner/mstars.png" alt="mstars" />
+            <div className="border w-[300px] h-[175px] flex items-center justify-center rounded-xl shadow-xl">
+              <img src="./partner/mstars.svg" alt="mstars" />
             </div>
           </div>
         </div>
@@ -141,7 +145,7 @@ const Mainpage = () => {
             <div className="border rounded-lg p-4 sm:w-[350px] w-[300px] sm:h-[160px] h-[180px]">
               <img src="./vector/humans.png" alt="vector" />
               <p className="text-[16px] mt-4 font-bold">
-                DMore engaged customers
+                More engaged customers
               </p>
               <p className="text-[16px] mt-2 text-[#4F6696]">
                 Users were engaged and were checking more updates on the Credit

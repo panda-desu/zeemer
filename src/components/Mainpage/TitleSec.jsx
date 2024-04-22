@@ -29,12 +29,12 @@ const TitleSec = () => {
         <div className="mt-20 flex items-center justify-between">
           <img
             className="w-[120px] sm:w-[200px] sm:h-full"
-            src="./partner/silkway.png"
+            src="./partner/silkway.svg"
             alt="silkway"
           />
           <img
             className="w-[120px] sm:w-[200px] sm:h-full"
-            src="./partner/microsoft.png"
+            src="./partner/microsoft.svg"
             alt="microsoft"
           />
         </div>
