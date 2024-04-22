@@ -2,6 +2,7 @@
 import React from "react";
 import Header from "../components/Header";
 import TitleSec from "../components/Mainpage/TitleSec";
+import { IoGameControllerOutline } from "react-icons/io5";
 
 const Mainpage = () => {
   return (
@@ -31,7 +32,7 @@ const Mainpage = () => {
             <div className="">
               <img
                 className="rounded-2xl shadow-xl w-[598px]"
-                src="./mainpage/frame4.png"
+                src="./mainpage/frame1.png"
                 alt="frame"
               />
             </div>
@@ -47,7 +48,7 @@ const Mainpage = () => {
             <div className="">
               <img
                 className="rounded-2xl shadow-xl w-[598px]"
-                src="./mainpage/frame5.png"
+                src="./mainpage/frame2.png"
                 alt="frame"
               />
             </div>
@@ -86,7 +87,11 @@ const Mainpage = () => {
               </p>
             </div>
             <div className="">
-              <img src="./mainpage/frame3.png" alt="frame" />
+              <img
+                className="rounded-2xl shadow-xl w-[598px]"
+                src="./mainpage/frame3.png"
+                alt="frame"
+              />
             </div>
           </div>
         </div>
@@ -133,13 +138,13 @@ const Mainpage = () => {
           </p>
           <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 justify-between sm:mb-20 mb-0">
             <div className="border rounded-lg p-4 sm:w-[350px] w-[300px] sm:h-[160px] h-[180px]">
-              <img src="./vector/todown.png" alt="vector" />
+              <IoGameControllerOutline className="h-6 w-6" />
               <p className="text-[16px] mt-4 font-bold">
-                Default Rate Dropped by 3%
+                More accurate scoring
               </p>
               <p className="text-[16px] mt-2 text-[#4F6696]">
-                Our clients used non-traditional data to calculate credit score
-                and reached 3% decrease in their default rate metric{" "}
+                Our clients use our games for non-traditional data for their
+                credit scoring{" "}
               </p>
             </div>
             <div className="border rounded-lg p-4 sm:w-[350px] w-[300px] sm:h-[160px] h-[180px]">
@@ -154,9 +159,7 @@ const Mainpage = () => {
             </div>
             <div className="border rounded-lg p-4 sm:w-[350px] w-[300px] sm:h-[160px] h-[180px]">
               <img src="./vector/toTop.png" alt="vector" />
-              <p className="text-[16px] mt-4 font-bold">
-                Approved 10% more loans
-              </p>
+              <p className="text-[16px] mt-4 font-bold">Approve more loans</p>
               <p className="text-[16px] mt-2 text-[#4F6696]">
                 Our clients approved more loans by people who has no credit
                 history or formal work experience using game data
