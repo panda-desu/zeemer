@@ -3,7 +3,7 @@ import React from "react";
 
 const TitleSec = () => {
   return (
-    <div className="relative mb-[400px] sm:mb-[150px]">
+    <div className="relative mb-[300px] sm:mb-[150px]">
       <img src="bgimg.png" alt="img" />
       <div className="absolute top-20 sm:top-[188px] sm:inset-x-[15%] inset-x-[2%] z-10">
         <p className="text-center text-xl sm:text-6xl font-bold ">
@@ -25,18 +25,6 @@ const TitleSec = () => {
           >
             Learn more{" "}
           </a>
-        </div>
-        <div className="mt-20 flex items-center justify-between">
-          <img
-            className="w-[120px] sm:w-[200px] sm:h-full"
-            src="./partner/silkway.svg"
-            alt="silkway"
-          />
-          <img
-            className="w-[120px] sm:w-[200px] sm:h-full"
-            src="./partner/microsoft.svg"
-            alt="microsoft"
-          />
         </div>
       </div>
     </div>

@@ -175,17 +175,7 @@ const Mainpage = () => {
             </div>
           </div> */}
           <p className="text-4xl text-center font-bold my-20">Backed by</p>
-          <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 items-start justify-between mb-20">
-            <div className="border w-[300px] h-[175px] flex items-center justify-center rounded-xl shadow-xl">
-              <img src="./partner/silkway2.svg" alt="silkway" />
-            </div>
-            <div className="border w-[300px] h-[175px] flex items-center justify-center rounded-xl shadow-xl">
-              <img
-                className="mt-4"
-                src="./partner/microsoft2.svg"
-                alt="mirosoft"
-              />
-            </div>
+          <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 items-start justify-center mb-20">
             <div className="border w-[300px] h-[175px] flex items-center justify-center rounded-xl shadow-xl">
               <img src="./partner/mstars.svg" alt="mstars" />
             </div>
